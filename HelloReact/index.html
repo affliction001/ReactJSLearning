@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hello React!</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" type="text/javascript"></script>
+
+  <script src="lib/react.development.js"></script>
+  <script src="lib/react-dom.development.js"></script>
+  <script src="lib/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+<script type="text/babel">
+
+let text_header = 'Hello, React.';
+
+class Header extends React.Component {
+  render() {
+    return (
+      <header className="header">
+        <h1>{ text_header }</h1>
+      </header>
+    )
+  }
+}
+
+class LeftColumn extends React.Component {
+  render() {
+    return (
+      <section className="left-column">
+        <p>Left section</p>
+      </section>
+    )
+  }
+}
+
+class RightColumn extends React.Component {
+  render() {
+    return (
+      <section className="right-column">
+        <p>Right section</p>
+      </section>
+    )
+  }
+}
+
+class MainColumn extends React.Component {
+  render() {
+    return (
+      <section className="main-column">
+        <p>Main section</p>
+      </section>
+    )
+  }
+}
+
+class Container extends React.Component {
+  render() {
+    return (
+      <div className="container">
+        <LeftColumn />
+        <MainColumn />
+        <RightColumn />
+      </div>
+    )
+  }
+}
+
+class Footer extends React.Component {
+  render() {
+    return (
+      <footer className="footer">
+        <p>Footer</p>
+      </footer>
+    )
+  }
+}
+
+const App = () => {
+  return (
+    <React.Fragment>
+      <Header />
+      <Container />
+      <Footer />
+    </React.Fragment>
+  )
+}
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);
+
+</script>
+</body>
+</html>
