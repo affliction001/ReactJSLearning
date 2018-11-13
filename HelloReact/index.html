@@ -20,6 +20,24 @@
 
 let text_header = 'Hello, React.';
 
+let text_main = [
+  {
+    id: '1',
+    title: 'First title',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit'
+  },
+  {
+    id: '2',
+    title: 'Second title',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit'
+  },
+  {
+    id: '3',
+    title: 'Third title',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit'
+  }
+];
+
 class Header extends React.Component {
   render() {
     return (
@@ -50,11 +68,40 @@ class RightColumn extends React.Component {
   }
 }
 
+class News extends React.Component {
+  render() {
+    const { title, text } = this.props.data;
+    return (
+      <div className="news-container">
+        <h2>{ title }</h2>
+        <p>{ text }</p>
+      </div>
+    )
+  }
+}
+
 class MainColumn extends React.Component {
   render() {
+    const { data } = this.props;
+    let news = '';
+
+    if (data.length > 0) {
+      news = data.map(item => {
+        return (
+          <News data={ item } key={ item.id }/>
+        )
+      })
+    } else {
+      news = (
+        <div className="news-container">
+          <p>You have not news.</p>
+        </div>
+      )
+    }
+
     return (
       <section className="main-column">
-        <p>Main section</p>
+        { news }
       </section>
     )
   }
@@ -65,7 +112,7 @@ class Container extends React.Component {
     return (
       <div className="container">
         <LeftColumn />
-        <MainColumn />
+        <MainColumn data={ text_main } />
         <RightColumn />
       </div>
     )
