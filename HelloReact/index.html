@@ -38,6 +38,24 @@ let text_main = [
   }
 ];
 
+let left_datas = [
+  {
+    id: '1',
+    title: 'Left 1',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit'
+  },
+  {
+    id: '2',
+    title: 'Left 2',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit'
+  },
+  {
+    id: '3',
+    title: 'Left 3',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit'
+  }
+];
+
 class Header extends React.Component {
   render() {
     return (
@@ -48,11 +66,40 @@ class Header extends React.Component {
   }
 }
 
+class LeftNews extends React.Component {
+  render() {
+    const { title, text } = this.props.data;
+    return (
+      <div className="left-news-container">
+        <h3 className="left-news-container__title">{ title }</h3>
+        <p className="left-news-container__text">{ text }</p>
+      </div>
+    )
+  }
+}
+
 class LeftColumn extends React.Component {
   render() {
+    const data = this.props.data;
+    let news = '';
+
+    if (data.length) {
+      news = data.map(item => {
+        return (
+          <LeftNews key={ item.id } data={ item }/>
+        )
+      })
+    } else {
+      news = (
+        <div className="left-news-container">
+          <p>You have not news.</p>
+        </div>
+      )
+    }
+
     return (
       <section className="left-column">
-        <p>Left section</p>
+        { news }
       </section>
     )
   }
@@ -111,7 +158,7 @@ class Container extends React.Component {
   render() {
     return (
       <div className="container">
-        <LeftColumn />
+        <LeftColumn data={ left_datas }/>
         <MainColumn data={ text_main } />
         <RightColumn />
       </div>

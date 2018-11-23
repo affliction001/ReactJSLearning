@@ -27,7 +27,6 @@ body {
 }
 
 .left-column, .right-column, .main-column {
-  padding: 20px 0;
   vertical-align: top;
 }
 
@@ -38,7 +37,25 @@ body {
   background-color: #bbb;
 }
 
+.left-news-container {
+  border-top: 5px solid #226;
+  padding: 10px 5px;
+  background: linear-gradient(to bottom, #226, #fff);
+}
+
+.left-news-container__title {
+  color: #fff;
+  text-align: left;
+  padding: 10px;
+}
+
+.left-news-container__text {
+  text-align: justify;
+  font-size: 14px;
+}
+
 .main-column {
+  padding: 20px 0;
   border: 1px solid black;
   display: inline-block;
   width: 60%;
