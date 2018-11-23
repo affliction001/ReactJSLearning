@@ -56,6 +56,24 @@ let left_datas = [
   }
 ];
 
+let right_datas = [
+  {
+    id: '1',
+    title: 'Left 1',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit'
+  },
+  {
+    id: '2',
+    title: 'Left 2',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit'
+  },
+  {
+    id: '3',
+    title: 'Left 3',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit'
+  }
+];
+
 class Header extends React.Component {
   render() {
     return (
@@ -70,9 +88,9 @@ class LeftNews extends React.Component {
   render() {
     const { title, text } = this.props.data;
     return (
-      <div className="left-news-container">
-        <h3 className="left-news-container__title">{ title }</h3>
-        <p className="left-news-container__text">{ text }</p>
+      <div className="side-container">
+        <h3 className="side-container__title">{ title }</h3>
+        <p className="side-container__text">{ text }</p>
       </div>
     )
   }
@@ -91,7 +109,7 @@ class LeftColumn extends React.Component {
       })
     } else {
       news = (
-        <div className="left-news-container">
+        <div className="side-container">
           <p>You have not news.</p>
         </div>
       )
@@ -105,11 +123,40 @@ class LeftColumn extends React.Component {
   }
 }
 
+class RightNews extends React.Component {
+  render() {
+    const { title, text } = this.props.data;
+    return (
+      <div className="side-container">
+        <h3 className="side-container__title">{ title }</h3>
+        <p className="side-container__text">{ text }</p>
+      </div>
+    )
+  }
+}
+
 class RightColumn extends React.Component {
   render() {
+    const data = this.props.data;
+    let news = '';
+
+    if (data.length) {
+      news = data.map(item => {
+        return (
+          <RightNews key={ item.id } data={ item }/>
+        )
+      })
+    } else {
+      news = (
+        <div className="side-container">
+          <p>You have not news.</p>
+        </div>
+      )
+    }
+
     return (
       <section className="right-column">
-        <p>Right section</p>
+        { news }
       </section>
     )
   }
@@ -160,7 +207,7 @@ class Container extends React.Component {
       <div className="container">
         <LeftColumn data={ left_datas }/>
         <MainColumn data={ text_main } />
-        <RightColumn />
+        <RightColumn data={ right_datas }/>
       </div>
     )
   }
