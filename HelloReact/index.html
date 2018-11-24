@@ -16,7 +16,7 @@
   <script src="lib/babel.min.js"></script>
   <script type="text/babel">
 
-  let text_header = 'Hello, React.';
+  let text_header = 'ReactJS.';
 
   let text_main = [
     {
@@ -74,6 +74,8 @@
       text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit'
     }
   ];
+
+  const comments = [];
 
   class Header extends React.Component {
     render() {
@@ -240,6 +242,39 @@
     }
   }
 
+  class CommentsForm extends React.Component {
+    state = {
+      userName: "",
+      userComment: "",
+    }
+
+    enterUserName = (event) => {
+      this.setState({ userName: event.currentTarget.value })
+    }
+
+    enterUserComment = (event) => {
+      this.setState({ userComment: event.currentTarget.value })
+    }
+
+    render() {
+      return (
+        <form className="form">
+          <input onChange={ this.enterUserName } name="userName" type="text" className="form__input_name" value={ this.state.userName } placeholder="Enter your name" />
+          <input onChange={ this.enterUserComment } name="userComment" type="text" className="form__input_comment" value={ this.state.userComment } placeholder="Enter your comment" />
+          <input type="button" className="form__button" value="Send" />
+        </form>
+      )
+    }
+  }
+
+  class Messages extends React.Component {
+    render() {
+      return (
+        <CommentsForm />
+      )
+    }
+  }
+
   class Footer extends React.Component {
     render() {
       return (
@@ -255,6 +290,7 @@
       <React.Fragment>
         <Header />
         <Container />
+        <Messages />
         <Footer />
       </React.Fragment>
     )
