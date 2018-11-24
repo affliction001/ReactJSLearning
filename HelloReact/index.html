@@ -109,14 +109,14 @@
           <h3 className="side-container__title">{ title }</h3>
           {
             visible ?
-            <p className="side-container__text">
-              { fullText }
-              <a href="#" onClick={this.hideMoreText}> Hidden </a>
-            </p> :
-            <p className="side-container__text">
-              { text }
-              <a href="#" onClick={this.showMoreText}> Show more </a>
-            </p>
+              <p className="side-container__text">
+                { fullText }
+                <a href="#" onClick={this.hideMoreText}> Hidden </a>
+              </p> :
+              <p className="side-container__text">
+                { text }
+                <a href="#" onClick={this.showMoreText}> Show more </a>
+              </p>
           }
         </div>
       )
