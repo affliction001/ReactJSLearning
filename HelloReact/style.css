@@ -14,7 +14,6 @@ body {
 }
 
 .header {
-  border: 1px solid black;
   border-radius: 50px;
   margin: 10px;
   padding: 20px;
@@ -22,7 +21,6 @@ body {
 }
 
 .container {
-  border: 1px solid black;
   margin: 10px;
 }
 
@@ -31,7 +29,6 @@ body {
 }
 
 .left-column, .right-column {
-  border: 1px solid black;
   display: inline-block;
   width: 20%;
   background-color: #bbb;
@@ -41,6 +38,7 @@ body {
   border-top: 5px solid #226;
   padding: 10px 5px;
   background: linear-gradient(to bottom, #226, #fff);
+  text-align: left;
 }
 
 .side-container__title {
@@ -56,8 +54,8 @@ body {
 }
 
 .main-column {
-  padding: 20px 0;
   border: 1px solid black;
+  padding: 20px 0;
   display: inline-block;
   width: 60%;
   background-color: #eee;
@@ -71,10 +69,7 @@ body {
   padding: 20px 10px;
 }
 
-.right-column {}
-
 .footer {
-  border: 1px solid black;
   border-radius: 50px;
   margin: 10px;
   padding: 20px;
