@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Hello React!</title>
+  <title>React project</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="background"></div>
   <div id="root"></div>
 
+  <script src="keygenerator.js" type="text/javascript"></script>
   <script src="lib/react.development.js"></script>
   <script src="lib/react-dom.development.js"></script>
   <script src="lib/babel.min.js"></script>
@@ -75,7 +77,7 @@
     }
   ];
 
-  const comments = {};
+  const comments = [];
 
   class Header extends React.Component {
     render() {
@@ -259,8 +261,9 @@
     sendComment = (event) => {
       const userName = document.querySelector('#userName').value;
       const userComment = document.querySelector('#userComment').value;
-      comments.userName = userName;
-      comments.userComment = userComment;
+      document.querySelector('#userComment').value = '';
+      comments.push({ 'userName': userName,
+                      'userComment': userComment });
     }
 
     render() {
@@ -287,10 +290,70 @@
     }
   }
 
+  class NewComment extends React.Component {
+    render() {
+      const { userName, userComment } = this.props.data;
+      return (
+        <div>
+          <div className="comment">
+            <p className="comment__author">{ userName }</p>
+            <p className="comment__text">{ userComment }</p>
+          </div>
+        </div>
+      )
+    }
+  }
+
+  class CommentsField extends React.Component {
+    state = {
+      data: ''
+    }
+
+    setComments = () => {
+      this.setState({ data: comments });
+    }
+
+    getComments = () => {
+      return this.state.data;
+    }
+
+    render() {
+      const data = this.getComments();
+
+      let dataLength = data.length;
+      let commentsToDisplay = '';
+
+      if (data.length === 0) {
+        commentsToDisplay = <div className="comment"><p className="comment__text">No comments.</p></div>;
+      } else {
+        commentsToDisplay = data.map(comment => {
+          return <NewComment key={ keygenerator() } data={ comment } />
+        })
+      }
+
+      // Здесь имитация ajax, прием данных с сервера. Ожидание добавления нового комментария.
+      setInterval(() => {
+        if (comments.length !== dataLength) {
+          dataLength = comments.length;
+          this.setComments();
+        }
+      }, 1000);
+
+      return (
+        <React.Fragment>
+          { commentsToDisplay }
+        </React.Fragment>
+      )
+    }
+  }
+
   class Messages extends React.Component {
     render() {
       return (
-        <CommentsForm />
+        <div>
+          <CommentsForm />
+          <CommentsField />
+        </div>
       )
     }
   }
