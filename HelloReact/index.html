@@ -75,7 +75,7 @@
     }
   ];
 
-  const comments = [];
+  const comments = {};
 
   class Header extends React.Component {
     render() {
@@ -256,12 +256,32 @@
       this.setState({ userComment: event.currentTarget.value })
     }
 
+    sendComment = (event) => {
+      const userName = document.querySelector('#userName').value;
+      const userComment = document.querySelector('#userComment').value;
+      comments.userName = userName;
+      comments.userComment = userComment;
+    }
+
     render() {
       return (
         <form className="form">
-          <input onChange={ this.enterUserName } name="userName" type="text" className="form__input_name" value={ this.state.userName } placeholder="Enter your name" />
-          <input onChange={ this.enterUserComment } name="userComment" type="text" className="form__input_comment" value={ this.state.userComment } placeholder="Enter your comment" />
-          <input type="button" className="form__button" value="Send" />
+          <input onChange={ this.enterUserName }
+                 id="userName"
+                 type="text"
+                 className="form__input_name"
+                 value={ this.state.userName }
+                 placeholder="Enter your name" />
+          <input onChange={ this.enterUserComment }
+                 id="userComment"
+                 type="text"
+                 className="form__input_comment"
+                 value={ this.state.userComment }
+                 placeholder="Enter your comment" />
+          <input type="button"
+                 className="form__button"
+                 value="Send"
+                 onClick={ this.sendComment } />
         </form>
       )
     }

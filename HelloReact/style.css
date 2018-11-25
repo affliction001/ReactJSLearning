@@ -87,12 +87,20 @@ body {
   font-size: 20px;
 }
 
+.form__input_name:focus {
+  outline: none;
+}
+
 .form__input_comment {
   border: 5px groove #cce;
   border-radius: 15px;
   width: 50%;
   background-color: #e5e5f7;
   font-size: 20px;
+}
+
+.form__input_comment:focus {
+  outline: none;
 }
 
 .form__button {
