@@ -18,76 +18,9 @@
   <script src="lib/babel.min.js"></script>
   <script type="text/babel">
 
-  let text_header = 'ReactJS.';
 
-  let text_main = [
-    {
-      id: '1',
-      title: 'First title',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit'
-    },
-    {
-      id: '2',
-      title: 'Second title',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit'
-    },
-    {
-      id: '3',
-      title: 'Third title',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit'
-    }
-  ];
-
-  let left_datas = [
-    {
-      id: '1',
-      title: 'Left 1',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit',
-      fullText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit.'
-    },
-    {
-      id: '2',
-      title: 'Left 2',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit',
-      fullText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit.'
-    },
-    {
-      id: '3',
-      title: 'Left 3',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit',
-      fullText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit.'
-    }
-  ];
-
-  let right_datas = [
-    {
-      id: '1',
-      title: 'Left 1',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit'
-    },
-    {
-      id: '2',
-      title: 'Left 2',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit'
-    },
-    {
-      id: '3',
-      title: 'Left 3',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit'
-    }
-  ];
 
   const comments = [];
-
-  class Header extends React.Component {
-    render() {
-      return (
-        <header className="header">
-          <h1>{ text_header }</h1>
-        </header>
-      )
-    }
-  }
 
   class LeftNews extends React.Component {
     state = {
@@ -357,32 +290,6 @@
       )
     }
   }
-
-  class Footer extends React.Component {
-    render() {
-      return (
-        <footer className="footer">
-          <p>Footer</p>
-        </footer>
-      )
-    }
-  }
-
-  const App = () => {
-    return (
-      <React.Fragment>
-        <Header />
-        <Container />
-        <Messages />
-        <Footer />
-      </React.Fragment>
-    )
-  }
-
-  ReactDOM.render(
-    <App />,
-    document.getElementById('root')
-  );
 
   </script>
 </body>

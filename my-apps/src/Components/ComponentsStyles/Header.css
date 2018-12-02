@@ -1,0 +1,6 @@
+.header {
+  border-radius: 50px;
+  margin: 10px;
+  padding: 20px;
+  background: linear-gradient(to top, #88c, #fff 30%, #fff 70%, #88c);
+}

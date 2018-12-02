@@ -1,10 +1,13 @@
 import React from 'react';
-import './header.css';
+import {text_header} from '../data';
+import './ComponentsStyles/Header.css';
 
 class Header extends React.Component {
   render() {
     return (
-      <h1 className="header">It is a header.</h1>
+      <header className="header">
+        <h1>{text_header}</h1>
+      </header>
     );
   }
 }
