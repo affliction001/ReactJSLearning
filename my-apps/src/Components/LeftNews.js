@@ -17,20 +17,20 @@ class LeftNews extends React.Component {
   }
 
   render() {
-    const { title, text, fullText } = this.props.data;
-    const { visible } = this.state;
+    const {title, text, fullText} = this.props.data;
+    const {visible} = this.state;
 
     return (
       <div className="side-container">
-        <h3 className="side-container__title">{ title }</h3>
+        <h3 className="side-container__title">{title}</h3>
         {
           visible ?
             <p className="side-container__text">
-              { fullText }
+              {fullText}
               <a href="#" onClick={this.hideMoreText}> Hidden </a>
             </p> :
             <p className="side-container__text">
-              { text }
+              {text}
               <a href="#" onClick={this.showMoreText}> Show more </a>
             </p>
         }
