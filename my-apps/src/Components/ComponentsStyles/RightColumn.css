@@ -1,0 +1,13 @@
+.right-column {
+  vertical-align: top;
+  display: inline-block;
+  width: 20%;
+  background-color: #bbb;
+}
+
+.side-container {
+  border-top: 5px solid #226;
+  padding: 10px 5px;
+  background: linear-gradient(to bottom, #44a, #fff);
+  text-align: left;
+}

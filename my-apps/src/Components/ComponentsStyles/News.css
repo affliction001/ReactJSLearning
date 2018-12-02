@@ -1,0 +1,7 @@
+.news-container {
+  border: 4px solid #579;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  margin: 20px;
+  padding: 20px 10px;
+}

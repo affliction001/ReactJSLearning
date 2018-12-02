@@ -1,0 +1,18 @@
+.side-container {
+  border-top: 5px solid #226;
+  padding: 10px 5px;
+  background: linear-gradient(to bottom, #44a, #fff);
+  text-align: left;
+}
+
+.side-container__title {
+  color: #dd7;
+  text-shadow: 1px 1px 2px #000, -1px -1px 1px #f00;
+  text-align: left;
+  padding: 10px;
+}
+
+.side-container__text {
+  text-align: justify;
+  font-size: 14px;
+}
