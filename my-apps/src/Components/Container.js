@@ -1,11 +1,15 @@
 import React from 'react';
+import './ComponentsStyles/Container.css';
+import {left_datas, text_main, right_datas} from '../data';
 
 class Container extends React.Component {
   render() {
     return (
-      <footer className="footer">
-        <p>Footer</p>
-      </footer>
+      <div className="container">
+        <LeftColumn data={ left_datas }/>
+        <MainColumn data={ text_main } />
+        <RightColumn data={ right_datas }/>
+      </div>
     );
   }
 }

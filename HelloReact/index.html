@@ -165,18 +165,6 @@
     }
   }
 
-  class Container extends React.Component {
-    render() {
-      return (
-        <div className="container">
-          <LeftColumn data={ left_datas }/>
-          <MainColumn data={ text_main } />
-          <RightColumn data={ right_datas }/>
-        </div>
-      )
-    }
-  }
-
   class CommentsForm extends React.Component {
     state = {
       userName: "",
@@ -276,17 +264,6 @@
         <React.Fragment>
           { commentsToDisplay }
         </React.Fragment>
-      )
-    }
-  }
-
-  class Messages extends React.Component {
-    render() {
-      return (
-        <div>
-          <CommentsForm />
-          <CommentsField />
-        </div>
       )
     }
   }
