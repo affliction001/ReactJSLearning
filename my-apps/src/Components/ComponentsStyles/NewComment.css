@@ -1,0 +1,31 @@
+.comment {
+  display: inline-block;
+  margin: 2px 100px;
+  padding: 10px 20px;
+  border: 1px solid #000;
+  text-align: left;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background: #eef;
+}
+
+.comment__author {
+  display: inline-block;
+  padding: 5px 15px 0px 20px;
+  border-bottom: 4px ridge #ddf;
+  font-style: italic;
+  font-family: cursive;
+  font-weight: bold;
+  font-size: 25px;
+  color: #ff0;
+  text-shadow: 1px 1px 2px #000, -1px -1px 2px #f00;
+  letter-spacing: 1px;
+
+}
+
+.comment__text {
+  padding: 10px 5px 5px 5px;
+  font-style: italic;
+  font-family: cursive;
+  font-size: 18px;
+}

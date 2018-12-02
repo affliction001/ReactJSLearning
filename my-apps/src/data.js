@@ -57,4 +57,6 @@ const right_datas = [
   }
 ];
 
-export {text_header, text_main, left_datas, right_datas};
+const comments = [];
+
+export {text_header, text_main, left_datas, right_datas, comments};

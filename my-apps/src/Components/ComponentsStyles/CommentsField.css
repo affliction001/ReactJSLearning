@@ -1,0 +1,17 @@
+.comment {
+  display: inline-block;
+  margin: 2px 100px;
+  padding: 10px 20px;
+  border: 1px solid #000;
+  text-align: left;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background: #eef;
+}
+
+.comment__text {
+  padding: 10px 5px 5px 5px;
+  font-style: italic;
+  font-family: cursive;
+  font-size: 18px;
+}
